@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Filament\Resources\Variants\Pages;
+
+use App\Filament\Resources\Variants\VariantResource;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\ForceDeleteAction;
+use Filament\Actions\RestoreAction;
+use Filament\Actions\ViewAction;
+use Filament\Resources\Pages\EditRecord;
+
+class EditVariant extends EditRecord
+{
+    protected static string $resource = VariantResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            ViewAction::make(),
+            DeleteAction::make(),
+            ForceDeleteAction::make(),
+            RestoreAction::make(),
+        ];
+    }
+}

@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Filament\Resources\Attributes\Schemas;
+
+use App\Models\Attribute;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Schemas\Schema;
+
+class AttributeInfolist
+{
+    public static function configure(Schema $schema): Schema
+    {
+        return $schema
+            ->components([
+                TextEntry::make('code'),
+                TextEntry::make('name'),
+                TextEntry::make('created_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('updated_at')
+                    ->dateTime()
+                    ->placeholder('-'),
+                TextEntry::make('deleted_at')
+                    ->dateTime()
+                    ->visible(fn (Attribute $record): bool => $record->trashed()),
+            ]);
+    }
+}
