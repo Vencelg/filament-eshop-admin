@@ -51,7 +51,12 @@ An e-shop administration panel built with [Laravel 12](https://laravel.com), [Fi
    php artisan db:seed
    ```
    Seeds categories, attributes with values, outlets, products with images, variants, and stock entries.
-
+### Default Admin Credentials
+Available after seeding
+```bash
+admin@email.com
+password
+```
 ## Development
 
 Start all development services (server, queue, logs, Vite) in one command:
